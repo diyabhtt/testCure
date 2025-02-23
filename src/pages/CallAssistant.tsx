@@ -10,18 +10,18 @@ export function CallAssistant() {
 
   const startConversation = useCallback(async () => {
     try {
-      // Set loading state to true
+      
       setIsLoading(true);
       setError(null);
 
-      // Log to ensure the function is triggered
+      
       console.log('Start conversation triggered');
 
-      // Start the conversation by calling the external API
+      
       const response = await fetch('https://v2-api.respell.ai/spells/start', {
         method: 'POST',
         headers: {
-          ['x-api-key']: 'cm7hry5rn009qixqnusmwwmrw',  // Updated API key
+          ['x-api-key']: 'cm7hry5rn009qixqnusmwwmrw',  // api respell
           accept: 'application/json',
           'content-type': 'application/json',
         },
@@ -29,15 +29,15 @@ export function CallAssistant() {
           spellId: 'cm7hrz1af00a3ixqnkgir57nj',
           wait: true,
           inputs: {
-              "email": "YOUR INPUT",  // Replace with actual email
-              "phone_number": "9724646949",  // Replace with actual phone number
-              "recipient_name": "Bertha",  // Replace with actual recipient name
+              "email": "YOUR INPUT", 
+              "phone_number": "9724646949", 
+              "recipient_name": "Bertha",  
               "call_objective_script": "I want the agent to prompt me questions for a diagnosis and when the user gives symptoms I want it to diagnose with an illness. Prompt the user to tell you about their details such as age and past medical history."  // Your original script
           },
         }),
       });
 
-      // Check if the response is successful
+      
       if (!response.ok) {
         throw new Error('Failed to start conversation');
       }
@@ -45,18 +45,18 @@ export function CallAssistant() {
       const data = await response.json();
       console.log('Conversation started:', data);
       
-      // You can further process the response here, like storing session info or updating UI
+     
     } catch (err) {
       console.error('Error starting conversation:', err);
       setError('Failed to start the conversation. Please try again.');
     } finally {
-      // Set loading state to false
+      
       setIsLoading(false);
     }
   }, []);
 
   const stopConversation = useCallback(() => {
-    // Logic for stopping the conversation can be added here if needed
+    
     console.log('Conversation stopped');
   }, []);
 

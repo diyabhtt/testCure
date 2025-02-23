@@ -49,7 +49,7 @@ const Login = () => {
             : "Successfully logged in",
         });
         
-        // Only navigate on successful login
+        
         if (!isSignUp) {
           navigate("/dashboard");
         }

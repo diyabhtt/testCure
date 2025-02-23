@@ -77,7 +77,7 @@ const ChatBot = () => {
 
       setMessages((prev) => [...prev, assistantMessage]);
 
-      // Save messages to the database
+      
       const { data: { user } } = await supabase.auth.getUser();
       if (user) {
         await supabase.from("chat_messages").insert([

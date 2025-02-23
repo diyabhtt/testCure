@@ -13,12 +13,12 @@ export function Conversation() {
 
   const startConversation = useCallback(async () => {
     try {
-      // Request microphone permission
+      
       await navigator.mediaDevices.getUserMedia({ audio: true });
 
-      // Start the conversation with your agent
+      
       await conversation.startSession({
-        agentId: 'YOUR_AGENT_ID', // Replace with your agent ID
+        agentId: 'YOUR_AGENT_ID',
       });
       setIsConversationStarted(true);
     } catch (error) {
