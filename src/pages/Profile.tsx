@@ -35,11 +35,11 @@ const Profile = () => {
       if (data) setFullName(data.full_name);
     } catch (error) {
       console.error("Error loading profile:", error);
-      toast({
-        title: "Error",
-        description: "Failed to load profile data",
-        variant: "destructive",
-      });
+      // toast({
+      //   title: "Error",
+      //   description: "Failed to load profile data",
+      //   variant: "destructive",
+      // });
     } finally {
       setLoading(false);
     }
