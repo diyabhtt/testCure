@@ -7,8 +7,9 @@ const client = twilio(accountSid, authToken);
 export default async function handler(req, res) {
   if (req.method === "POST") {
     try {
+      // Update with your actual ngrok URL
       const call = await client.calls.create({
-        url: "https://your-ngrok-url.ngrok.io/curio/voice.xml", // Your ngrok URL or public endpoint
+        url: "https://ab9a-129-110-241-55.ngrok-free.ngrok.io/curio/voice.xml",  // Your Ngrok URL
         to: "+19724646949", // Your phone number
         from: "+16823422306", // Twilio bot number
       });
