@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Response>
+  <Say>Welcome to your medical assistant. How can I assist you today?</Say>
+  
+  <!-- Gather speech from the user -->
+  <Gather input="speech" action="/api/process-speech" method="POST">
+    <Say>Say something to begin the conversation.</Say>
+  </Gather>
+
+  <!-- If no input, prompt again -->
+  <Say>Sorry, I didn't hear anything. Please say something.</Say>
+</Response>
